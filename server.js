@@ -31,7 +31,9 @@ router.get("/recommendkeyword", ZingController.getRecommendKeyword)
 router.get("/suggestionkeyword", ZingController.getSuggestionKeyword)
 
 app.use("/api/", router)
-
+app.use("/", (req, res) => {
+   console.log("Home")
+})
 app.listen(3000, () => {
    console.log(`Server start on port`)
 })
