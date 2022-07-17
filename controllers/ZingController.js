@@ -68,7 +68,7 @@ class ZingController {
    }
 
    async getHubDetail(req, res) {
-      const data = await zing.get_hub_detail(req.query.id)
+      const data = await zing.get_hub_detail(req.params.id)
       res.json(data)
    }
 
