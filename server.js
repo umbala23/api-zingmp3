@@ -1,7 +1,7 @@
 const express = require("express")
 const { zing } = require("zingmp3-api-next")
 const ZingController = require("./controllers/ZingController")
-let cors = require("cors")
+
 var app = express()
 var router = express.Router()
 
@@ -11,7 +11,7 @@ app.use((req, res, next) => {
    res.setHeader("Access-Control-Allow-Methods", "Content-Type", "Authorization")
    next()
 })
-app.use(cors())
+
 router.get("/home", ZingController.getHome)
 router.get("/playlist/:id", ZingController.getPlayList)
 router.get("/suggestedplaylists/:id", ZingController.GetSuggestedPlaylists)
