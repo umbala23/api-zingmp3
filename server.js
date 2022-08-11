@@ -1,10 +1,11 @@
 const express = require("express")
 const { zing } = require("zingmp3-api-next")
 const ZingController = require("./controllers/ZingController")
+var cors = require("cors")
 
 var app = express()
 var router = express.Router()
-
+app.use(cors())
 app.use((req, res, next) => {
    res.setHeader("Access-Control-Allow-Origin", "*")
    res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE")
